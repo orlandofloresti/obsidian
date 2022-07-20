@@ -1,0 +1,39 @@
+.loging-signup {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr minmax(auto, 600px) 1fr;
+        height: 80vh;
+    }
+
+    .content {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        align-self: center;
+    }
+
+    .form-content {
+        padding: 20px;
+        label {
+            margin-bottom: .5rem;
+            display: block;
+            width: 100%;
+        }
+        input {
+            margin-bottom: 1.5rem;
+            display: block;
+            width: 100%;
+        }
+        
+        button {
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+        
+        .notes {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+}

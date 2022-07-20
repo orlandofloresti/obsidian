@@ -1,0 +1,25 @@
+<div class="loging-signup">
+    <div class="wrapper">
+        <div class="content">
+            <p-card [header]="'KNS'">
+                <div class="form-content">
+    
+                    <form [formGroup]="fg">
+                        <label for="user" class="block">Usuario</label>
+                        <input id="user" class="block" type="username" pInputText formControlName="user" />
+    
+                        <label for="password" class="block">Username</label>
+                        <input id="password" class="block" type="username" pInputText formControlName="password" />
+                    </form>
+    
+                    <button pButton type="button" label="Ingresar"></button>
+    
+                    <div class="notes">
+                        <span>Crear cuenta</span>
+                    </div>
+                </div>
+    
+            </p-card>
+        </div>
+    </div>
+</div>
