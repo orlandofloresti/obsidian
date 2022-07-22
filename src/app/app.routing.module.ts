@@ -9,11 +9,17 @@ const routes: Routes = [
   },
   {
     path: 'module',
-    loadChildren: () => import('./modules/modules.module').then((modules) => modules.ModulesModule),
+    loadChildren: () =>
+      import('./modules/modules.module').then(
+        (modules) => modules.ModulesModule
+      ),
   },
   {
     path: 'transactions',
-    loadChildren: () => import('./transactions/transactions.module').then((transactions) => transactions.TransactionsModule),
+    loadChildren: () =>
+      import('./transactions/transactions.module').then(
+        (transactions) => transactions.TransactionsModule
+      ),
   },
   { path: '', redirectTo: 'module', pathMatch: 'full' },
   { path: '**', redirectTo: 'auth', pathMatch: 'full' },

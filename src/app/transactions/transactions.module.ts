@@ -20,12 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    PanelComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-  ]
+  declarations: [PanelComponent],
+  imports: [CommonModule, RouterModule.forChild(routes)],
 })
-export class TransactionsModule { }
+export class TransactionsModule {}
