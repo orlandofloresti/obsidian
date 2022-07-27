@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  OnInit,
+} from '@angular/core';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-warehouse',
@@ -6,7 +12,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./warehouse.component.scss'],
 })
 export class WarehouseComponent implements OnInit {
-  constructor() {}
+  constructor(private navbarService: NavbarService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.navbarService.setTitle('Almacén');
+  }
 }

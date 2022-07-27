@@ -1,1 +1,18 @@
-<p>sidebar works!</p>
+<div class="logo">
+  <img src="../../../../assets/media/logo.png" alt="Logo" height="40px" />
+  <h1>KNS</h1>
+</div>
+
+<div *ngFor="let category of items">
+  <div *ngIf="category.label" class="menu-category">{{ category.label }}</div>
+  <div *ngIf="category.items">
+    <a
+      *ngFor="let item of category.items"
+      class="menu-item"
+      [routerLink]="['/module', item.path]"
+      routerLinkActive="menu-active"
+    >
+      <i [class]="item.icon"></i> {{ item.label }}</a
+    >
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.menu-category {
+  font-weight: bold;
+  padding: 10px;
+}
+
+.menu-item {
+  display: block;
+  padding: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: black;
+}
+.menu-item:hover {
+  background-color: var(--item-hover);
+  cursor: pointer;
+}
+
+.menu-active {
+  background-color: var(--item-active);
+}
