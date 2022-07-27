@@ -1,21 +1,25 @@
 .wrapper {
   display: grid;
   grid-template-columns: 300px auto;
-  height: 100vh;
-}
 
-.sidebar {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-right: 1px solid var(--border-line);
-  background-color: var(--sidebar-bg-color);
-}
+  .sidebar {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-right: 1px solid var(--border-line);
+    background-color: var(--sidebar-bg-color);
+    height: 100vh;
+    overflow-y: auto;
+  }
 
-// .wrapper-content {
-// }
-// .navbar {
-// }
+  .wrapper-content {
+    .header {
+      position: sticky;
+      top: 0;
+    }
 
-.content {
-  padding: 1.5rem;
+    .content {
+      height: calc(100vh - 115px);
+      overflow-y: auto;
+    }
+  }
 }

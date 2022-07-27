@@ -4,7 +4,7 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-import { NavbarService } from 'src/app/services/navbar.service';
+import { HeaderService } from 'src/app/services/header.service';
 
 @Component({
   selector: 'app-warehouse',
@@ -12,9 +12,282 @@ import { NavbarService } from 'src/app/services/navbar.service';
   styleUrls: ['./warehouse.component.scss'],
 })
 export class WarehouseComponent implements OnInit {
-  constructor(private navbarService: NavbarService) {}
+  products: any[] = [
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+    {
+      code: 'string',
+      name: 'string',
+      category: 'string',
+      quantity: 'string',
+    },
+  ];
+
+  constructor(private headerService: HeaderService) {}
 
   ngOnInit(): void {
-    this.navbarService.setTitle('Almacén');
+    this.headerService.setTitle('Almacén');
   }
 }

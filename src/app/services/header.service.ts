@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class NavbarService {
+export class HeaderService {
   title = new Subject<string>();
 
   constructor() {}

@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: white;
+  border-bottom: 1px solid var(--border-line);
+
+  .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+
+    .navbar-title {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    .search-input {
+      display: flex;
+      align-items: center;
+      input {
+        width: 600px;
+      }
+    }
+    // .navbar-actions {
+    // }
+  }
+
+  .tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .tools-actions {
+      button {
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+}

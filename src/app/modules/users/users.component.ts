@@ -4,7 +4,7 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-import { NavbarService } from 'src/app/services/navbar.service';
+import { HeaderService } from 'src/app/services/header.service';
 
 @Component({
   selector: 'app-users',
@@ -12,9 +12,9 @@ import { NavbarService } from 'src/app/services/navbar.service';
   styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {
-  constructor(private navbarService: NavbarService) {}
+  constructor(private headerService: HeaderService) {}
 
   ngOnInit(): void {
-    this.navbarService.setTitle('Usuarios');
+    this.headerService.setTitle('Usuarios');
   }
 }
