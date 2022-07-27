@@ -5,5 +5,22 @@
 }
 
 .sidebar {
-  padding: 10px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.wrapper-content {
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  display: grid;
+  grid-template-columns: auto minmax(auto, 1400px) auto;
+}
+.navbar {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.content {
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
