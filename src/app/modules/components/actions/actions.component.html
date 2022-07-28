@@ -1,0 +1,9 @@
+<button
+  *ngFor="let action of actions"
+  pButton
+  pRipple
+  type="button"
+  [label]="action.label"
+  [class]="action.class"
+  [icon]="action.icon"
+></button>

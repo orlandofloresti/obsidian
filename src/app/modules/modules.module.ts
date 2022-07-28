@@ -13,6 +13,7 @@ import { MenuModule } from 'primeng/menu';
 import { RouterModule, Routes } from '@angular/router';
 import { PanelComponent } from './panel/panel.component';
 import { TableModule } from 'primeng/table';
+import { ActionsComponent } from './components/actions/actions.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,7 @@ const routes: Routes = [
     InOutsComponent,
     HeaderComponent,
     PanelComponent,
+    ActionsComponent,
   ],
   imports: [
     CommonModule,

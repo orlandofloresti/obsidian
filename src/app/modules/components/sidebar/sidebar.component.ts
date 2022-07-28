@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IMenuCategory } from 'src/app/interfaces/menu.interfaces';
+import { IMenuCategory } from 'src/app/interfaces/menu.interface';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',

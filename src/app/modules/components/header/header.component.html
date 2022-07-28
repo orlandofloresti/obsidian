@@ -1,6 +1,6 @@
 <div class="header">
   <div class="navbar">
-    <p class="navbar-title">{{ title }}</p>
+    <span class="navbar-title">{{ title }}</span>
 
     <span class="p-input-icon-left search-input">
       <i class="pi pi-search"></i>
@@ -12,7 +12,7 @@
       />
     </span>
 
-    <div calss="navbar-actions">
+    <div class="navbar-notifications">
       <button
         pButton
         pRipple
@@ -23,40 +23,13 @@
     </div>
   </div>
 
-  <div class="tools">
-    <div class="tools-actions">
-      <button
-        pButton
-        pRipple
-        type="button"
-        label="Crear"
-        class="menu-button p-button-primary p-button-sm"
-        icon="pi pi-plus"
-      ></button>
-      <button
-        pButton
-        pRipple
-        type="button"
-        label="Entradas"
-        class="menu-button p-button-text p-button-sm"
-        icon="pi pi-angle-double-down"
-      ></button>
-      <button
-        pButton
-        pRipple
-        type="button"
-        label="Salidas"
-        class="menu-button p-button-text p-button-sm"
-        icon="pi pi-angle-double-up"
-      ></button>
-      <button
-        pButton
-        pRipple
-        type="button"
-        label="Actualizar"
-        class="menu-button p-button-text p-button-sm"
-        icon="pi pi-refresh"
-      ></button>
+  <div class="actions">
+    <div class="primary-actions">
+      <app-actions [actions]="primaryActions"></app-actions>
+    </div>
+
+    <div class="secondady-actions">
+      <app-actions [actions]="secondaryActions"></app-actions>
     </div>
   </div>
 </div>

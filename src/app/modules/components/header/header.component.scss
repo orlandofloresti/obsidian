@@ -8,36 +8,46 @@
 
   .navbar {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
     height: 60px;
-    align-items: center;
+    grid-template-columns: minmax(auto, 400px) auto minmax(auto, 400px);
 
     .navbar-title {
+      padding: 0;
+      margin: 0;
       font-weight: bold;
       font-size: 2rem;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      align-self: center;
     }
 
     .search-input {
-      display: flex;
-      align-items: center;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      align-self: center;
       input {
-        width: 600px;
+        display: block;
+        width: 100%;
       }
     }
-    // .navbar-actions {
-    // }
+    .navbar-notifications {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      justify-self: end;
+    }
   }
 
-  .tools {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
-    .tools-actions {
-      button {
-        margin-bottom: 0.8rem;
-      }
+    .primary-actions {
+      justify-self: start;
+    }
+
+    .secondady-actions {
+      justify-self: end;
     }
   }
 }

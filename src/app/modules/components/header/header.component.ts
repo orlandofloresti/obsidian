@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { IAction } from 'src/app/interfaces/actions.interface';
 import { HeaderService } from 'src/app/services/header.service';
 
 @Component({
@@ -6,12 +8,31 @@ import { HeaderService } from 'src/app/services/header.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
+  subscriptions: Subscription[] = [];
+
   title: string = '';
+  primaryActions: IAction[] = [];
+  secondaryActions: IAction[] = [];
 
   constructor(private headerService: HeaderService) {}
 
   ngOnInit(): void {
-    this.headerService.title.subscribe((title) => (this.title = title));
+    [
+      this.headerService.title.subscribe((title) => (this.title = title)),
+      this.headerService.actions.subscribe(({ primary, secondary }) => {
+        this.primaryActions = primary;
+        this.secondaryActions = secondary;
+      }),
+    ].forEach((subs) => {
+      this.subscriptions.push(subs);
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach((subs) => {
+      subs.unsubscribe();
+    });
+    this.subscriptions = [];
   }
 }
