@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { IActions } from '../interfaces/actions.interface';
+import { IActions } from '../interfaces/actions';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HeaderService {
   title = new Subject<string>();
-  actions = new Subject<IActions>();
+  actionsList = new Subject<IActions>();
+  actionClicked = new Subject<string>();
 
   constructor() {}
 
@@ -19,7 +20,11 @@ export class HeaderService {
 
   setActions(actions: IActions) {
     setTimeout(() => {
-      this.actions.next(actions);
+      this.actionsList.next(actions);
     });
+  }
+
+  emitActionClicked(label: string) {
+    this.actionClicked.next(label);
   }
 }

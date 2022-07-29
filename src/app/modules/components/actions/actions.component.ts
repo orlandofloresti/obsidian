@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { IAction } from 'src/app/interfaces/actions.interface';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IAction } from 'src/app/interfaces/actions';
 
 @Component({
   selector: 'app-actions',
@@ -13,6 +13,8 @@ export class ActionsComponent implements OnInit {
     this._actions = values;
   }
 
+  @Output() actionClicked = new EventEmitter<string>();
+
   get actions() {
     return this._actions;
   }
@@ -20,4 +22,8 @@ export class ActionsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onClick(label: string) {
+    this.actionClicked.emit(label);
+  }
 }

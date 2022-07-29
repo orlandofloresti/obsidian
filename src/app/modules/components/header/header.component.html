@@ -25,11 +25,17 @@
 
   <div class="actions">
     <div class="primary-actions">
-      <app-actions [actions]="primaryActions"></app-actions>
+      <app-actions
+        [actions]="primaryActions"
+        (actionClicked)="onActionClicked($event)"
+      ></app-actions>
     </div>
 
     <div class="secondady-actions">
-      <app-actions [actions]="secondaryActions"></app-actions>
+      <app-actions
+        [actions]="secondaryActions"
+        (actionClicked)="onActionClicked($event)"
+      ></app-actions>
     </div>
   </div>
 </div>
