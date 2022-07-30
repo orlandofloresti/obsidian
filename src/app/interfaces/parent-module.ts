@@ -1,8 +1,14 @@
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { IActions } from './actions';
 
-export interface IParentModule {
+export interface IParentModuleCompoment {
+  service: string;
   title: string;
   actions: IActions;
-  subscriptions: Subscription;
+  subs: Subscription;
+  headers: string[];
+  items: { [prop: string]: any }[];
+  loading: boolean;
+  onAction(label: string): void;
+  onUpdateData(module: string): Observable<any[]>;
 }

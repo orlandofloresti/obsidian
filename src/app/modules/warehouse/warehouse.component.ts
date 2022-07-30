@@ -1,69 +1,92 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component } from '@angular/core';
+import { map } from 'rxjs';
+import { AppsModules, Classes, Icons, Labels } from 'src/app/const/actions';
 import { IActions } from 'src/app/interfaces/actions';
-import { IParentModule } from 'src/app/interfaces/parent-module';
-import { HeaderService } from 'src/app/services/header.service';
-import { PRODUCTSMOCK } from 'src/assets/mocks/products.mock';
+import { ParentModuleUtil } from 'src/app/utils/parent-module.util';
+import { ParentModuleComponent } from '../components/parent-module/parent-module.component';
 
 @Component({
   selector: 'app-warehouse',
-  templateUrl: './warehouse.component.html',
-  styleUrls: ['./warehouse.component.scss'],
+  templateUrl: '../components/parent-module/parent-module.component.html',
+  styleUrls: ['../components/parent-module/parent-module.component.scss'],
 })
-export class WarehouseComponent implements IParentModule, OnInit, OnDestroy {
-  title: string = 'Almacén';
-  actions: IActions = {
+export class WarehouseComponent extends ParentModuleComponent {
+  override service: string = AppsModules['warehouse'].service;
+  override title: string = AppsModules['warehouse'].title;
+  override actions: IActions = {
     primary: [
       {
-        label: 'Crear',
-        class: 'menu-button p-button-primary p-button-sm',
-        icon: 'pi pi-plus',
+        label: Labels.add,
+        class: Classes.add,
+        icon: Icons.add,
       },
 
       {
-        label: 'Entradas',
-        class: 'menu-button p-button-text p-button-sm',
-        icon: 'pi pi-angle-double-down',
+        label: Labels.incomes,
+        class: Classes.incomes,
+        icon: Icons.incomes,
       },
       {
-        label: 'Salidas',
-        class: 'menu-button p-button-text p-button-sm',
-        icon: 'pi pi-angle-double-up',
+        label: Labels.outcomes,
+        class: Classes.outcomes,
+        icon: Icons.outcomes,
       },
       {
-        label: 'Actualizar',
-        class: 'menu-button p-button-text p-button-sm',
-        icon: 'pi pi-refresh',
+        label: Labels.update,
+        class: Classes.update,
+        icon: Icons.update,
       },
     ],
     secondary: [],
   };
-  subscriptions: Subscription = new Subscription();
 
-  products = PRODUCTSMOCK;
+  override headers: string[] = [
+    'Código',
+    'Descripción',
+    'Color',
+    'Talla',
+    'Cantidad',
+    'Opciones',
+  ];
+  keys: string[] = [
+    'code',
+    'description',
+    'color',
+    'size',
+    'quantity',
+    'options',
+  ];
 
-  constructor(private headerService: HeaderService) {}
-
-  ngOnInit(): void {
-    // Set config of module view
-    this.headerService.setTitle(this.title);
-    this.headerService.setActions(this.actions);
-
-    // Subscriptions
-    [
-      this.headerService.actionClicked.subscribe((action) => {
-        this.onAction(action);
-      }),
-    ].forEach((sub) => {
-      this.subscriptions.add(sub);
-    });
-  }
-
-  onAction(label: string) {
-    console.log(label);
-  }
-
-  ngOnDestroy(): void {
-    this.subscriptions.unsubscribe();
+  override onAction(label: string): void {
+    switch (label) {
+      case Labels.add:
+        break;
+      case Labels.incomes:
+        break;
+      case Labels.outcomes:
+        break;
+      case Labels.update:
+        this.loading = true;
+        this.onUpdateData(this.service)
+          .pipe(
+            map((items) => {
+              return ParentModuleUtil.getOptions(items);
+            })
+          )
+          .subscribe({
+            next: (items) => {
+              setTimeout(() => {
+                this.items = items;
+                this.loading = false;
+              }, 3000);
+            },
+            error: (error) => {
+              console.error(error);
+              this.loading = false;
+            },
+            complete: () => console.info(`Data loaded from ${this.service}`),
+          });
+        break;
+    }
   }
 }

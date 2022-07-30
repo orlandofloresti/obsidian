@@ -1,50 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component } from '@angular/core';
+import { AppsModules, Classes, Icons, Labels } from 'src/app/const/actions';
 import { IActions } from 'src/app/interfaces/actions';
-import { IParentModule } from 'src/app/interfaces/parent-module';
-import { HeaderService } from 'src/app/services/header.service';
+import { ParentModuleComponent } from '../components/parent-module/parent-module.component';
 
 @Component({
   selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss'],
+  templateUrl: '../components/parent-module/parent-module.component.html',
+  styleUrls: ['../components/parent-module/parent-module.component.scss'],
 })
-export class UsersComponent implements IParentModule, OnInit {
-  title: string = 'Usuarios';
-  actions: IActions = {
+export class UsersComponent extends ParentModuleComponent {
+  override title: string = AppsModules['users'].title;
+  override service: string = AppsModules['users'].service;
+  override actions: IActions = {
     primary: [
       {
-        label: 'Crear',
-        class: 'menu-button p-button-primary p-button-sm',
-        icon: 'pi pi-plus',
+        label: Labels.add,
+        class: Classes.add,
+        icon: Icons.add,
+      },
+      {
+        label: Labels.update,
+        class: Classes.update,
+        icon: Icons.update,
       },
     ],
     secondary: [],
   };
-  subscriptions: Subscription = new Subscription();
+  keys = [];
 
-  constructor(private headerService: HeaderService) {}
-
-  ngOnInit(): void {
-    // Set config of module view
-    this.headerService.setTitle(this.title);
-    this.headerService.setActions(this.actions);
-
-    // Subscriptions
-    [
-      this.headerService.actionClicked.subscribe((action) => {
-        this.onAction(action);
-      }),
-    ].forEach((sub) => {
-      this.subscriptions.add(sub);
-    });
-  }
-
-  onAction(label: string) {
+  override onAction(label: string) {
     console.log(label);
-  }
-
-  ngOnDestroy(): void {
-    this.subscriptions.unsubscribe();
   }
 }

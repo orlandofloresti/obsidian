@@ -14,6 +14,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PanelComponent } from './panel/panel.component';
 import { TableModule } from 'primeng/table';
 import { ActionsComponent } from './components/actions/actions.component';
+import { ParentModuleComponent } from './components/parent-module/parent-module.component';
+import { SkeletonModule } from 'primeng/skeleton';
 
 const routes: Routes = [
   {
@@ -43,6 +45,7 @@ const routes: Routes = [
     HeaderComponent,
     PanelComponent,
     ActionsComponent,
+    ParentModuleComponent,
   ],
   imports: [
     CommonModule,
@@ -53,6 +56,7 @@ const routes: Routes = [
     MenuModule,
     TableModule,
     ReactiveFormsModule,
+    SkeletonModule,
     RouterModule.forChild(routes),
   ],
 })
