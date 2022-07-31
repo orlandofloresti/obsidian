@@ -1,12 +1,5 @@
 import { IAvailableActions } from '../interfaces/actions';
 
-export const AppsModules: {
-  [prop: string]: { title: string; service: string };
-} = {
-  warehouse: { title: 'Almacén', service: 'warehouse' },
-  users: { title: 'users', service: 'users' },
-};
-
 export const Labels: IAvailableActions = {
   add: 'Crear',
   incomes: 'Entradas',

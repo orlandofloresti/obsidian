@@ -1,21 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { WarehouseComponent } from './warehouse/warehouse.component';
-import { UsersComponent } from './users/users.component';
-import { InOutsComponent } from '../transactions/inouts/inouts.component';
-import { HeaderComponent } from './components/header/header.component';
-import { CardModule } from 'primeng/card';
-import { ButtonModule } from 'primeng/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { InputTextModule } from 'primeng/inputtext';
-import { MenuModule } from 'primeng/menu';
 import { RouterModule, Routes } from '@angular/router';
-import { PanelComponent } from './panel/panel.component';
+
+// Primeng modules
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { CardModule } from 'primeng/card';
 import { TableModule } from 'primeng/table';
-import { ActionsComponent } from './components/actions/actions.component';
-import { ParentModuleComponent } from './components/parent-module/parent-module.component';
 import { SkeletonModule } from 'primeng/skeleton';
+import { MenuModule } from 'primeng/menu';
+
+// Factories
+import { WarehouseFactory } from './warehouse/warehouse.factory';
+import { UserFactory } from './users/users.factory';
+
+// Customs components
+import { PanelComponent } from './components/panel/panel.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ActionsComponent } from './components/actions/actions.component';
+import { ViewListComponent } from './components/view-list/view-list.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 const routes: Routes = [
   {
@@ -24,11 +29,13 @@ const routes: Routes = [
     children: [
       {
         path: 'warehouse',
-        component: WarehouseComponent,
+        component: ViewListComponent,
+        data: WarehouseFactory,
       },
       {
         path: 'users',
-        component: UsersComponent,
+        component: ViewListComponent,
+        data: UserFactory,
       },
       { path: '', redirectTo: 'warehouse', pathMatch: 'full' },
       { path: '**', redirectTo: 'warehouse', pathMatch: 'full' },
@@ -39,13 +46,10 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     SidebarComponent,
-    WarehouseComponent,
-    UsersComponent,
-    InOutsComponent,
     HeaderComponent,
     PanelComponent,
     ActionsComponent,
-    ParentModuleComponent,
+    ViewListComponent,
   ],
   imports: [
     CommonModule,

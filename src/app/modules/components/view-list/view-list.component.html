@@ -1,0 +1,36 @@
+<p-table
+  [value]="dataTable"
+  [scrollable]="true"
+  scrollHeight="calc(100vh - 115px)"
+  *ngIf="!loading; else loadingTemplate"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th *ngFor="let header of dataHeaders">{{ header.label }}</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-item>
+    <tr>
+      <td *ngFor="let header of dataHeaders" (click)="onItemClick(item)">
+        <span>{{ item[header.key] }}</span>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<ng-template #loadingTemplate>
+  <p-table [value]="[{}, {}, {}]" responsiveLayout="scroll" *ngIf="loading">
+    <ng-template pTemplate="header">
+      <tr>
+        <th *ngFor="let header of dataHeaders">{{ header.label }}</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td *ngFor="let key of dataHeaders">
+          <p-skeleton></p-skeleton>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</ng-template>
