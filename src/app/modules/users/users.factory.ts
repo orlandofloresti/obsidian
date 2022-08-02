@@ -7,7 +7,7 @@ export const UserFactory: IViewList = {
   service: UsersService,
   title: ModulesTitles.users,
   actions: {
-    primary: [
+    left: [
       {
         label: Labels.add,
         class: Classes.add,
@@ -19,7 +19,7 @@ export const UserFactory: IViewList = {
         icon: Icons.update,
       },
     ],
-    secondary: [],
+    right: [],
   },
 
   dataHeaders: [

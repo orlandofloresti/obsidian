@@ -7,7 +7,7 @@ export const WarehouseFactory: IViewList = {
   service: WarehouseService,
   title: ModulesTitles.warehouse,
   actions: {
-    primary: [
+    left: [
       {
         label: Labels.add,
         class: Classes.add,
@@ -29,7 +29,7 @@ export const WarehouseFactory: IViewList = {
         icon: Icons.update,
       },
     ],
-    secondary: [],
+    right: [],
   },
 
   dataHeaders: [

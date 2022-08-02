@@ -1,7 +1,7 @@
 import { IAvailableActions } from '../interfaces/actions';
 
 export const Labels: IAvailableActions = {
-  add: 'Crear',
+  add: 'Agregar',
   incomes: 'Entradas',
   outcomes: 'Salidas',
   update: 'Actualizar',
@@ -15,8 +15,8 @@ export const Icons: IAvailableActions = {
 };
 
 export const Classes: IAvailableActions = {
-  add: 'menu-button p-button-primary p-button-sm',
-  incomes: 'menu-button p-button-text p-button-sm',
-  outcomes: 'menu-button p-button-text p-button-sm',
-  update: 'menu-button p-button-text p-button-sm',
+  add: 'p-button-sm',
+  incomes: 'p-button-text p-button-sm',
+  outcomes: 'p-button-text p-button-sm',
+  update: 'p-button-text p-button-sm',
 };

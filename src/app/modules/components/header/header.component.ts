@@ -12,17 +12,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
 
   title: string = '';
-  primaryActions: IAction[] = [];
-  secondaryActions: IAction[] = [];
+  leftActions: IAction[] = [];
+  rightActions: IAction[] = [];
 
   constructor(private headerService: HeaderService) {}
 
   ngOnInit(): void {
     [
       this.headerService.title.subscribe((title) => (this.title = title)),
-      this.headerService.actionsList.subscribe(({ primary, secondary }) => {
-        this.primaryActions = primary;
-        this.secondaryActions = secondary;
+      this.headerService.actionsList.subscribe(({ left, right }) => {
+        this.leftActions = left;
+        this.rightActions = right;
       }),
     ].forEach((subs) => {
       this.subscriptions.push(subs);

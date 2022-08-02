@@ -22,8 +22,8 @@ export class ViewListComponent implements OnInit {
   // Header properties
   title: string = '';
   actions: IActions = {
-    primary: [],
-    secondary: [],
+    left: [],
+    right: [],
   };
 
   // Table data

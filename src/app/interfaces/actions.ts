@@ -21,6 +21,6 @@ export interface IAction {
  * @description Object to show actions in header
  */
 export interface IActions {
-  primary: IAction[];
-  secondary: IAction[];
+  left: IAction[];
+  right: IAction[];
 }

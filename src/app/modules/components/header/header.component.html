@@ -26,14 +26,14 @@
   <div class="actions">
     <div class="primary-actions">
       <app-actions
-        [actions]="primaryActions"
+        [actions]="leftActions"
         (actionClicked)="onActionClicked($event)"
       ></app-actions>
     </div>
 
     <div class="secondady-actions">
       <app-actions
-        [actions]="secondaryActions"
+        [actions]="rightActions"
         (actionClicked)="onActionClicked($event)"
       ></app-actions>
     </div>
