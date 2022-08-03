@@ -15,8 +15,8 @@ export const Icons: IAvailableActions = {
 };
 
 export const Classes: IAvailableActions = {
-  add: 'p-button-sm',
-  incomes: 'p-button-text p-button-sm',
-  outcomes: 'p-button-text p-button-sm',
-  update: 'p-button-text p-button-sm',
+  add: 'p-button-rounded p-button-sm',
+  incomes: 'p-button-outlined p-button-rounded p-button-sm',
+  outcomes: 'p-button-outlined p-button-rounded p-button-sm',
+  update: 'p-button-outlined p-button-rounded p-button-sm',
 };

@@ -69,8 +69,20 @@ export class ViewListComponent implements OnInit {
 
   onAction(label: string) {
     switch (label) {
+      case Labels.add:
+        console.log(Labels.add);
+        break;
       case Labels.update:
         this.getDataTable();
+        break;
+      case Labels.incomes:
+        console.log(Labels.incomes);
+        break;
+      case Labels.outcomes:
+        console.log(Labels.outcomes);
+        break;
+      default:
+        console.info('Action not available');
     }
   }
 
