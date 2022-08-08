@@ -1,7 +1,7 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Labels } from 'src/app/const/actions';
+import { AvailableActions } from 'src/app/const/actions';
 import { IActions } from 'src/app/interfaces/actions';
 import { IDataHeader } from 'src/app/interfaces/view-list';
 import { HeaderService } from 'src/app/services/header.service';
@@ -68,18 +68,19 @@ export class ViewListComponent implements OnInit {
   }
 
   onAction(label: string) {
+
     switch (label) {
-      case Labels.add:
-        console.log(Labels.add);
+      case AvailableActions.add.label:
+        console.log(label);
         break;
-      case Labels.update:
+      case AvailableActions.incomes.label:
+        console.log(label);
+        break;
+      case AvailableActions.update.label:
         this.getDataTable();
         break;
-      case Labels.incomes:
-        console.log(Labels.incomes);
-        break;
-      case Labels.outcomes:
-        console.log(Labels.outcomes);
+      case AvailableActions.outcomes.label:
+        console.log(label);
         break;
       default:
         console.info('Action not available');

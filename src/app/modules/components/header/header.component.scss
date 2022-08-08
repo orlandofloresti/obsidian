@@ -10,6 +10,7 @@
     width: 100%;
     display: grid;
     height: 60px;
+    margin-bottom: 1rem;
     grid-template-columns: minmax(auto, 400px) auto minmax(auto, 400px);
 
     .navbar-title {

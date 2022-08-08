@@ -1,4 +1,4 @@
-export const ModulesTitles = {
-  warehouse: 'Almacén',
-  users: 'Usuarios',
+export const enum ModulesTitles {
+  warehouse = 'Almacén',
+  users = 'Usuarios',
 };

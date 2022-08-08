@@ -2,10 +2,10 @@
  * @description List available actions in the project
  */
 export interface IAvailableActions {
-  add: string;
-  incomes: string;
-  outcomes: string;
-  update: string;
+  add: IAction;
+  incomes: IAction;
+  outcomes: IAction;
+  update: IAction;
 }
 
 /**

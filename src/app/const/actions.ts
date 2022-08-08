@@ -1,22 +1,25 @@
 import { IAvailableActions } from '../interfaces/actions';
 
-export const Labels: IAvailableActions = {
-  add: 'Agregar',
-  incomes: 'Entradas',
-  outcomes: 'Salidas',
-  update: 'Actualizar',
-};
+export const AvailableActions: IAvailableActions = {
+  add: {
+    label: 'Agregar',
+    icon: 'pi pi-plus',
+    class: 'p-button-rounded p-button-sm',
+  },
+  incomes: {
+    label: 'Entradas',
+    icon: 'pi pi-angle-double-down',
+    class: 'p-button-outlined p-button-rounded p-button-sm'
+  },
+  outcomes: {
+    label: 'Salidas',
+    icon: 'pi pi-angle-double-up',
+    class: 'p-button-outlined p-button-rounded p-button-sm',
+  },
+  update: {
+    label: 'Actualizar',
+    icon: 'pi pi-refresh',
+    class: 'p-button-outlined p-button-rounded p-button-sm',
+  }
+}
 
-export const Icons: IAvailableActions = {
-  add: 'pi pi-plus',
-  incomes: 'pi pi-angle-double-down',
-  outcomes: 'pi pi-angle-double-up',
-  update: 'pi pi-refresh',
-};
-
-export const Classes: IAvailableActions = {
-  add: 'p-button-rounded p-button-sm',
-  incomes: 'p-button-outlined p-button-rounded p-button-sm',
-  outcomes: 'p-button-outlined p-button-rounded p-button-sm',
-  update: 'p-button-outlined p-button-rounded p-button-sm',
-};
