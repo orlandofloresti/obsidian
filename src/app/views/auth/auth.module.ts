@@ -9,7 +9,7 @@ import { InputTextModule } from 'primeng/inputtext';
 
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarComponent } from '../../common/components/navbar/navbar.component';
 import { MenuModule } from 'primeng/menu';
 
 const routes: Routes = [

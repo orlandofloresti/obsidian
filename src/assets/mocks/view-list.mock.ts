@@ -1,4 +1,4 @@
-import { IProduct, IUser } from 'src/app/interfaces/view-list';
+import { IProduct, IUser } from 'src/app/common/interfaces/view-list';
 
 export const PRODUCTOS: IProduct[] = [
   {

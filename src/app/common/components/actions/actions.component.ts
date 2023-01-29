@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { IAction } from 'src/app/interfaces/actions';
+import { IAction } from 'src/app/common/interfaces/actions';
 
 @Component({
   selector: 'app-actions',

@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { filter, fromEvent, Subscription } from 'rxjs';
-import { KeysMapping } from 'src/app/const/keys';
-import { IAction } from 'src/app/interfaces/actions';
-import { HeaderService } from 'src/app/services/header.service';
-import { KeysEvents } from 'src/app/utils/keys-events.util';
+import { KeysMapping } from 'src/app/common/const/keys';
+import { IAction } from 'src/app/common/interfaces/actions';
+import { KeysEvents } from 'src/app/common/utils/keys-events.util';
+import { HeaderService } from './header.service';
 
 @Component({
   selector: 'app-header',

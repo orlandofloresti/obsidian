@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { IAction } from '../interfaces/actions';
+import { IAction } from 'src/app/common/interfaces/actions';
 
 @Injectable({
   providedIn: 'root',

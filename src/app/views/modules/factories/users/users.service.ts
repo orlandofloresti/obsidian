@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { IUser, IViewListService } from 'src/app/common/interfaces/view-list';
 import { USERS } from 'src/assets/mocks/view-list.mock';
-import { IUser, IViewListService } from '../interfaces/view-list';
 
 @Injectable({
   providedIn: 'root',

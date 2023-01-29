@@ -1,11 +1,11 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AvailableActions } from 'src/app/const/actions';
-import { IAction } from 'src/app/interfaces/actions';
-import { IDataHeader } from 'src/app/interfaces/view-list';
-import { HeaderService } from 'src/app/services/header.service';
-import { ViewListUtil } from 'src/app/utils/view-list.util';
+import { AvailableActions } from 'src/app/common/const/actions';
+import { IAction } from 'src/app/common/interfaces/actions';
+import { IDataHeader } from 'src/app/common/interfaces/view-list';
+import { ViewListUtil } from 'src/app/common/utils/view-list.util';
+import { HeaderService } from '../header/header.service';
 
 @Component({
   selector: 'app-warehouse',

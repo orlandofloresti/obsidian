@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import {
+  IProduct,
+  IViewListService,
+} from 'src/app/common/interfaces/view-list';
 import { PRODUCTOS } from 'src/assets/mocks/view-list.mock';
-import { IProduct, IViewListService } from '../interfaces/view-list';
 
 @Injectable({
   providedIn: 'root',

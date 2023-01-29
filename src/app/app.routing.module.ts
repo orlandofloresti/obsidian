@@ -5,19 +5,19 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () =>
-      import('./auth/auth.module').then((auth) => auth.AuthModule),
+      import('./views/auth/auth.module').then((auth) => auth.AuthModule),
   },
   {
     path: 'module',
     loadChildren: () =>
-      import('./modules/modules.module').then(
+      import('./views/modules/modules.module').then(
         (modules) => modules.ModulesModule
       ),
   },
   {
     path: 'transactions',
     loadChildren: () =>
-      import('./transactions/transactions.module').then(
+      import('./views/transactions/transactions.module').then(
         (transactions) => transactions.TransactionsModule
       ),
   },

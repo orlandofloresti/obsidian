@@ -1,7 +1,7 @@
-import { AvailableActions } from 'src/app/const/actions';
-import { ModulesTitles } from 'src/app/const/modules';
-import { IViewList } from 'src/app/interfaces/view-list';
-import { WarehouseService } from '../../services/warehouse.service';
+import { AvailableActions } from 'src/app/common/const/actions';
+import { ModulesTitles } from 'src/app/common/const/modules';
+import { IViewList } from 'src/app/common/interfaces/view-list';
+import { WarehouseService } from './warehouse.service';
 
 export const WarehouseFactory: IViewList = {
   service: WarehouseService,

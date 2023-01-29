@@ -12,15 +12,15 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { MenuModule } from 'primeng/menu';
 
 // Factories
-import { WarehouseFactory } from './warehouse/warehouse.factory';
-import { UserFactory } from './users/users.factory';
+import { UserFactory } from './factories/users/users.factory';
 
 // Customs components
-import { PanelComponent } from './components/panel/panel.component';
-import { HeaderComponent } from './components/header/header.component';
-import { ActionsComponent } from './components/actions/actions.component';
-import { ViewListComponent } from './components/view-list/view-list.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { WarehouseFactory } from './factories/warehouse/warehouse.factory';
+import { PanelComponent } from './panel/panel.component';
+import { ViewListComponent } from './panel/view-list/view-list.component';
+import { SidebarComponent } from './panel/sidebar/sidebar.component';
+import { HeaderComponent } from './panel/header/header.component';
+import { ActionsComponent } from 'src/app/common/components/actions/actions.component';
 
 const routes: Routes = [
   {

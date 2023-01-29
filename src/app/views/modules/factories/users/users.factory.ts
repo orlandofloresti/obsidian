@@ -1,7 +1,7 @@
-import { AvailableActions } from 'src/app/const/actions';
-import { ModulesTitles } from 'src/app/const/modules';
-import { IViewList } from 'src/app/interfaces/view-list';
-import { UsersService } from 'src/app/services/users.service';
+import { AvailableActions } from 'src/app/common/const/actions';
+import { ModulesTitles } from 'src/app/common/const/modules';
+import { IViewList } from 'src/app/common/interfaces/view-list';
+import { UsersService } from './users.service';
 
 export const UserFactory: IViewList = {
   service: UsersService,
