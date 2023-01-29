@@ -16,11 +16,3 @@ export interface IAction {
   icon: string;
   class: string;
 }
-
-/**
- * @description Object to show actions in header
- */
-export interface IActions {
-  left: IAction[];
-  right: IAction[];
-}

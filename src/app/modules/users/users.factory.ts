@@ -6,10 +6,7 @@ import { UsersService } from 'src/app/services/users.service';
 export const UserFactory: IViewList = {
   service: UsersService,
   title: ModulesTitles.users,
-  actions: {
-    left: [AvailableActions.add, AvailableActions.update],
-    right: [],
-  },
+  actions: [AvailableActions.add, AvailableActions.update],
 
   dataHeaders: [
     {

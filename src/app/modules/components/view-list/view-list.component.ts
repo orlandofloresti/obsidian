@@ -2,7 +2,7 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AvailableActions } from 'src/app/const/actions';
-import { IActions } from 'src/app/interfaces/actions';
+import { IAction } from 'src/app/interfaces/actions';
 import { IDataHeader } from 'src/app/interfaces/view-list';
 import { HeaderService } from 'src/app/services/header.service';
 import { ViewListUtil } from 'src/app/utils/view-list.util';
@@ -21,10 +21,7 @@ export class ViewListComponent implements OnInit {
 
   // Header properties
   title: string = '';
-  actions: IActions = {
-    left: [],
-    right: [],
-  };
+  actions: IAction[] = [];
 
   // Table data
   dataHeaders: IDataHeader[] = [];

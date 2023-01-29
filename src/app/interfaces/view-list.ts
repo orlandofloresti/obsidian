@@ -1,4 +1,4 @@
-import { IActions } from './actions';
+import { IAction } from './actions';
 
 export interface IDataHeader {
   label: string;
@@ -8,7 +8,7 @@ export interface IDataHeader {
 export interface IViewList {
   service: any;
   title: string;
-  actions: IActions;
+  actions: IAction[];
   dataHeaders: IDataHeader[];
   dataTable: { [prop: string]: any }[];
 }

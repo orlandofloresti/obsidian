@@ -18,8 +18,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   keyword: FormControl = new FormControl();
 
   title: string = '';
-  leftActions: IAction[] = [];
-  rightActions: IAction[] = [];
+  actions: IAction[] = [];
   search$ = fromEvent<KeyboardEvent>(document, 'keyup').pipe(
     filter((key) => KeysEvents.FilterKey(key, KeysMapping.search))
   );
@@ -32,10 +31,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.title = title;
         this.keyword.reset();
       }),
-      this.headerService.actionsList.subscribe(({ left, right }) => {
-        this.leftActions = left;
-        this.rightActions = right;
-      }),
+      this.headerService.actionsList.subscribe(
+        (actions) => (this.actions = actions)
+      ),
       this.search$.subscribe(() => {
         this.searchInput.nativeElement.focus();
       }),

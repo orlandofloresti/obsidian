@@ -26,16 +26,9 @@
   </div>
 
   <div class="actions">
-    <div class="primary-actions">
+    <div class="actions">
       <app-actions
-        [actions]="leftActions"
-        (actionClicked)="onActionClicked($event)"
-      ></app-actions>
-    </div>
-
-    <div class="secondady-actions">
-      <app-actions
-        [actions]="rightActions"
+        [actions]="actions"
         (actionClicked)="onActionClicked($event)"
       ></app-actions>
     </div>

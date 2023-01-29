@@ -6,16 +6,12 @@ import { WarehouseService } from '../../services/warehouse.service';
 export const WarehouseFactory: IViewList = {
   service: WarehouseService,
   title: ModulesTitles.warehouse,
-  actions: {
-    left: [
-      AvailableActions.add,
-      AvailableActions.incomes,
-      AvailableActions.outcomes,
-      AvailableActions.update,
-    ],
-    right: [],
-  },
-
+  actions: [
+    AvailableActions.add,
+    AvailableActions.incomes,
+    AvailableActions.outcomes,
+    AvailableActions.update,
+  ],
   dataHeaders: [
     {
       label: 'Código',
