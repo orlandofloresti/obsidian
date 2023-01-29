@@ -7,10 +7,7 @@ export const UserFactory: IViewList = {
   service: UsersService,
   title: ModulesTitles.users,
   actions: {
-    left: [
-      AvailableActions.add,
-      AvailableActions.update
-    ],
+    left: [AvailableActions.add, AvailableActions.update],
     right: [],
   },
 

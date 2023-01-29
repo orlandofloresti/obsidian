@@ -68,7 +68,6 @@ export class ViewListComponent implements OnInit {
   }
 
   onAction(label: string) {
-
     switch (label) {
       case AvailableActions.add.label:
         console.log(label);

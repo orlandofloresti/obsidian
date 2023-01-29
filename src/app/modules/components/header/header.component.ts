@@ -14,14 +14,14 @@ import { KeysEvents } from 'src/app/utils/keys-events.util';
 export class HeaderComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
 
-  @ViewChild("searchInput") searchInput: any;
+  @ViewChild('searchInput') searchInput: any;
   keyword: FormControl = new FormControl();
 
   title: string = '';
   leftActions: IAction[] = [];
   rightActions: IAction[] = [];
-  search$ = fromEvent<KeyboardEvent>(document, "keyup").pipe(
-    filter( (key) => KeysEvents.FilterKey(key, KeysMapping.search) )
+  search$ = fromEvent<KeyboardEvent>(document, 'keyup').pipe(
+    filter((key) => KeysEvents.FilterKey(key, KeysMapping.search))
   );
 
   constructor(private headerService: HeaderService) {}
@@ -36,9 +36,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.leftActions = left;
         this.rightActions = right;
       }),
-      this.search$.subscribe(()=> {
+      this.search$.subscribe(() => {
         this.searchInput.nativeElement.focus();
-      })
+      }),
     ].forEach((subs) => {
       this.subscriptions.push(subs);
     });

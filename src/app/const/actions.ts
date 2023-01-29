@@ -9,7 +9,7 @@ export const AvailableActions: IAvailableActions = {
   incomes: {
     label: 'Entradas',
     icon: 'pi pi-angle-double-down',
-    class: 'p-button-outlined p-button-rounded p-button-sm'
+    class: 'p-button-outlined p-button-rounded p-button-sm',
   },
   outcomes: {
     label: 'Salidas',
@@ -20,6 +20,5 @@ export const AvailableActions: IAvailableActions = {
     label: 'Actualizar',
     icon: 'pi pi-refresh',
     class: 'p-button-outlined p-button-rounded p-button-sm',
-  }
-}
-
+  },
+};
